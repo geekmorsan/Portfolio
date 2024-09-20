@@ -1,16 +1,8 @@
 ---
-
+import BaseLayout from "../components/BaseLayout.astro";
+const pageTitle = "Claudia's Portfolio";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Hero Page</title>
-	</head>
-	<body>
+	<BaseLayout pageTitle={pageTitle}>
 		<h1>Hola mundo</h1>
-	</body>
-</html>
+	</BaseLayout>
