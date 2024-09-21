@@ -1,6 +1,7 @@
 ---
-import Navigation from '../components/Navigation.astro';
+
 import "../styles/global.css";
+import Navbar from './Navbar.astro';
 const { pageTitle } = Astro.props;
 ---
 
@@ -9,11 +10,12 @@ const { pageTitle } = Astro.props;
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
+		<link href="https://use.typekit.net/gqz8ndv.css" rel="stylesheet" type="text/css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
 	<body>
-		<Navigation />
+		<Navbar />
 		<slot />
 	</body>
 </html>

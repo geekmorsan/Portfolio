@@ -1,0 +1,40 @@
+.hidden {
+    display: none;
+  }
+  
+h1 {
+    font-family: love-script, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    margin-top: 0;
+    color: #333;
+    text-align: center;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    font-family: yorkten-slab-normal, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  h5 {
+    font-size: 1.25rem;
+    font-family: yorkten-slab-normal, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  h6 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 1.5rem;
+      font-family: yorkten-slab-normal, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
