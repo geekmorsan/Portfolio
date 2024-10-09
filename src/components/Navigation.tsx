@@ -1,8 +1,9 @@
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import ThemeSwitcher from './ThemeSwitcher'
 
-import { Switch } from '@headlessui/react'
-import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
+import ThemeToggeler from './ThemeToggeler.astro'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -60,6 +61,7 @@ export default function Navigation({url}:NavigationProps) {
               </div>
             </div>
           </div>
+        <ThemeToggle />
         </div>
       </div>
 

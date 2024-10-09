@@ -55,7 +55,7 @@ h1 {
   --color-button: 231, 232, 234;
   --color-outline: 245, 245, 245;
 }
-:root [data-theme="dark"]{
+:root[data-theme="dark"] {
   --color-bgbase: 4, 9, 10;
   --color-accent2: 22, 111, 126;
   --color-accent2light: 84, 156, 168;

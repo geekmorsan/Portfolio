@@ -13,6 +13,19 @@ const { pageTitle } = Astro.props;
 		<link href="https://use.typekit.net/gqz8ndv.css" rel="stylesheet" type="text/css" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<script is:inline>
+			const theme = (() => {
+			  if (localStorage?.getItem("theme")) {
+				return localStorage?.getItem("theme");
+			  }
+			  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+				return "dark";
+			  }
+			  return "light";
+			})();
+			document.documentElement.setAttribute("data-theme", theme)
+			window.localStorage.setItem("theme", theme);
+		</script>
 	</head>
 	<body class="bg-bgbase" data-theme="">
 		<Header />
@@ -32,5 +45,6 @@ const { pageTitle } = Astro.props;
 			</div>
 		  </div>
 		<Footer />
+
 	</body>
 </html>
