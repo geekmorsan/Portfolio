@@ -33,18 +33,14 @@ function switchPosition(theme: string) {
 }
 function buttonIcon(theme: string) {
   if (theme === "dark") {
-    return (<SunIcon className="size-8 text-yellow-50"/>);
-  } else {
     return (<MoonIcon className="size-8 text-blue-950"/>);
+  } else {
+    return (<SunIcon className="size-8 text-yellow-50"/>);
   }
 }
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState(chosenTheme());
-
-  const handleClick = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme)
@@ -53,12 +49,12 @@ export default function ThemeToggle() {
 
 
   return (
-    // <button type="button" data-themetoggle onClick={handleClick}>
-    //   {buttonIcon(theme)}
-    // </button>
-    <button type="button" data-themetoggle onClick={handleClick}>
-        <div className="relative w-11 h-6 bg-accent-1-dark ring-1 ring-outline hover:ring-accent-2-light
+    <div>
+    <button type="button" data-theme-set="dark" onClick={()=>{setTheme("dark")}}>{buttonIcon("dark")}</button>
+    <button type="button" data-theme-set="light" onClick={()=>{setTheme("light")}}>{buttonIcon("light")}</button>
+        {/*<div className="relative w-11 h-6 bg-accent-1-dark ring-1 ring-outline hover:ring-accent-2-light
          rounded-full
-         ">{switchPosition(theme)}</div></button>
+         ">{switchPosition(theme)}</div>*/}
+         </div>
 );
 }

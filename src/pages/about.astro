@@ -1,7 +1,77 @@
 ---
 import BaseLayout from "../components/BaseLayout.astro";
 const pageTitle = "About Me";
+
+
 ---
 <BaseLayout pageTitle={pageTitle}>
+    <div id="theme-toggle-wrapper">
+        {/*<div>
+          <input type="checkbox" class="theme-toggle-checkbox" id="chk" />
+          <label class="relative block bg-accent-1-dark shadow-inner shadow-black w-16 h-7 rounded-full border border-outline cursor pointer" id="theme-toggle-label" for="chk">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-tabler icon-tabler-sun" width="15px" height="15px" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <circle cx="12" cy="12" r="4" />
+              <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="icon-tabler icon-tabler-moon"  width="15" height="15" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+            </svg>
+            <div id="theme-toggle-ball">
+              <span class="sr-only">Use dark theme</span>
+            </div>
+          </label>
+        </div></div><br/> */}
+        <label class="inline-flex relative items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div class="w-[4.5rem] h-9 bg-accent-1-dark peer-focus:outline-none ring-1 ring-button hover:ring-type-2
+             rounded-full peer peer-checked:after:translate-x-9 rtl:peer-checked:after:-translate-x-9
+             peer-checked:after:bg-button after:content-[''] after:absolute after:top-0.5 after:start-0.5
+              after:bg-button after:border-bgbase after:border after:rounded-full after:h-8 after:w-8 after:transition-all
+               peer-checked:bg-accent1-dark">
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="absolute stroke-accent-1 inset-y-1.5 left-1.5 w-6 h-6 icon-tabler icon-tabler-sun" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="absolute stroke-accent-1 inset-y-1.5 right-1.5 w-6 h-6 icon-tabler icon-tabler-moon" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+              </svg></label>
+
+              {/* <br/>
+
+               <label class="inline-flex items-center cursor-pointer">
+                <input type="checkbox" value="" class="sr-only ">
+                <div class="relative w-16 h-8 bg-accent-1-dark ring-1 ring-outline hover:ring-accent-2-light
+                 rounded-full
+                  after:translate-x-full rtl:after:-translate-x-full
+                  after:content-[''] after:absolute after:top-[2px] after:start-[2px]
+                  after:bg-accent-1-light after:border-accent-1-light after:border after:rounded-full after:h-7 after:w-7 after:transition-all
+                   "></div>
+
+              </label>
+THIS FUNCTIONAL SHOT IF I F*CK SOMETHING UP
+               <label class="inline-flex relative items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer">
+            <div class="w-16 h-9 bg-button peer-focus:outline-none border border-outline peer-focus:ring-2 peer-focus:ring-accent-2-light
+             rounded-full peer
+              peer-checked:after:translate-x-7 rtl:peer-checked:after:-translate-x-7
+             peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-0.5
+              after:bg-accent-1-light after:border-outline after:border after:rounded-full after:h-8 after:w-8 after:transition-all
+               peer-checked:bg-button">
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="absolute inset-y-1.5 left-1.5 w-6 h-6 icon-tabler icon-tabler-sun" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <circle cx="12" cy="12" r="4" />
+                <path d="M3 12h1m8 -9v1m8 8h1m-9 8v1m-6.4 -15.4l.7 .7m12.1 -.7l-.7 .7m0 11.4l.7 .7m-12.1 -.7l-.7 .7" />
+              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="absolute inset-y-1.5 right-1.5 w-6 h-6 icon-tabler icon-tabler-moon" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+              </svg></label>
+              */}
 
 </BaseLayout>
