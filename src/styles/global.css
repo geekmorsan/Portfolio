@@ -68,24 +68,4 @@ h1 {
   --color-button: 11, 24, 27;
   --color-outline: 130, 130, 130;
 }
-
-}
-
-@layer utilities {
-  :root[data-theme="light"] {
-    button[data-theme-set="light"] * {
-      display: none;
-    }
-    button[data-theme-set="dark"] * {
-      display: block;
-    }
-  }
-  :root[data-theme="dark"] {
-    button[data-theme-set="light"] * {
-      display: block;
-    }
-    button[data-theme-set="dark"] * {
-      display: none;
-    }
-  }
 }

@@ -1,9 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import ThemeSwitcher from './ThemeSwitcher'
-
 import ThemeToggle from './ThemeToggle'
-import ThemeToggeler from './ThemeToggeler.astro'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -34,7 +31,7 @@ export default function Navigation({url}:NavigationProps) {
               <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
             </DisclosureButton>
           </div>
-          <div className="flex flex-1 items-center mr-10 sm:items-stretch sm:justify-between">
+          <div className="flex flex-1 items-center sm:items-stretch sm:justify-between">
             <div className="flex items-center">
               <a href='/' className='flex items-center justify-between text-type-1 text-2xl gap-1 sm:gap-2 -m-1.5 p-1.5'>
               <img
@@ -43,25 +40,27 @@ export default function Navigation({url}:NavigationProps) {
                 className="h-16 w-auto"
               />Claudia Nohlgård</a>
             </div>
-            <div className="hidden sm:ml-6 sm:flex">
-              <div className="bg-button border border-outline/75 p-3 flex items-center shadow-md space-x-2 rounded-full">
-                {navigation.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
-                    className={classNames(
-                      item.href === url.pathname ? 'bg-accent-1 text-white shadow-lg' : 'text-type-2 hover:bg-accent-1-light hover:shadow-md hover:text-white',
-                      'rounded-full px-4 py-2 text-sm font-medium',
-                    )}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+            <div className="hidden  sm:flex absolute left-1/2 transform -translate-x-1/2">
+  <div className="bg-button border border-outline/75 p-3 flex items-center shadow-md space-x-2 rounded-full">
+    {navigation.map((item) => (
+      <a
+        key={item.name}
+        href={item.href}
+        aria-current={item.current ? 'page' : undefined}
+        className={classNames(
+          item.href === url.pathname ? 'bg-accent-1 text-white shadow-lg' : 'text-type-2 hover:bg-accent-1-light hover:shadow-md hover:text-white',
+          'rounded-full px-4 py-2 text-sm font-medium',
+        )}
+      >
+        {item.name}
+      </a>
+    ))}
+  </div>
+</div>
+
+            <div className='sm:flex items-center hidden'><ThemeToggle /></div>
           </div>
-        <ThemeToggle />
+
         </div>
       </div>
 
@@ -82,6 +81,7 @@ export default function Navigation({url}:NavigationProps) {
             </DisclosureButton>
           ))}
         </div>
+        <div className='flex flex-end p-4 sm:hidden'><ThemeToggle /></div>
       </DisclosurePanel>
     </Disclosure>
   )
