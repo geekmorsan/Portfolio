@@ -41,31 +41,56 @@ h1 {
   @media screen and(max-width: 768px){
 
   }
+
+
 @layer base {
 :root {
   --color-bgbase: 251, 251, 251;
   --color-accent1: 22, 111, 126;
   --color-accent1light: 84, 156, 168;
+  --color-accent1hover: 126, 180, 189;
   --color-accent1dark: 2, 60, 71;
   --color-accent2: 180, 26, 186;
   --color-accent2light: 211, 83, 215;
+  --color-accent2hover: 221, 125, 224;
   --color-accent2dark: 106, 0, 110;
   --color-type1: 4, 9, 10;
   --color-type2: 64, 82, 98;
   --color-button: 231, 232, 234;
+  --color-buttonhighlight: 133, 139, 141;
   --color-outline: 245, 245, 245;
 }
 :root[data-theme="dark"] {
   --color-bgbase: 4, 9, 10;
   --color-accent2: 22, 111, 126;
   --color-accent2light: 84, 156, 168;
+  --color-accent2hover: 52, 98, 105;
   --color-accent2dark: 2, 60, 71;
   --color-accent1: 180, 26, 186;
   --color-accent1light: 211, 83, 215;
+  --color-accent1hover: 129, 54, 133;
   --color-accent1dark: 106, 0, 110;
   --color-type1: 251, 251, 251;
-  --color-type2: 144, 150, 151;
+  --color-type2: 207, 208, 210;
   --color-button: 11, 24, 27;
-  --color-outline: 130, 130, 130;
+  --color-buttonhighlight: 50, 56, 59;
+  --color-outline: 207, 208, 210;
 }
+
+.from-my-color {
+  --tw-gradient-from: inherit var(--tw-gradient-from-position);
+--tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+--tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
+.to-my-color {
+  --tw-gradient-to: #e2e8f0 var(--tw-gradient-to-position);
+}
+
+.via-my-color {
+  --tw-gradient-to: rgb(255 247 237 / 0)  var(--tw-gradient-to-position);
+    --tw-gradient-stops: var(--tw-gradient-from), #fff7ed var(--tw-gradient-via-position), var(--tw-gradient-to);
+}
+
+.toggle-gradiennt {
+ background: linear-gradient(180deg,var(--color-button),var(--color-buttonhighlight));
+}}

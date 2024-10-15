@@ -17,13 +17,13 @@ export declare interface NavigationProps{
   url:URL,
 }
 
-export default function Navigation({url}:NavigationProps) {
+export default function Navigation({ url }: NavigationProps) {
   return (
     <Disclosure as="nav" className="">
       <div className="mx-auto p-4 sm:px-6 lg:px-12 py-8">
         <div className="relative flex h-16 items-center justify-between">
           <div className="absolute inset-y-0 right-0 flex items-center sm:hidden">
-            {/* Mobile menu button*/}
+            {/* Mobile menu button */}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
               <span className="absolute -inset-0.5" />
               <span className="sr-only">Open main menu</span>
@@ -31,39 +31,57 @@ export default function Navigation({url}:NavigationProps) {
               <XMarkIcon aria-hidden="true" className="hidden h-6 w-6 group-data-[open]:block" />
             </DisclosureButton>
           </div>
-          <div className="flex flex-1 items-center sm:items-stretch sm:justify-between">
-            <div className="flex items-center">
-              <a href='/' className='flex items-center justify-between text-type-1 text-2xl gap-1 sm:gap-2 -m-1.5 p-1.5'>
-              <img
-                alt="Your Company"
-                src="/Images/logocn.png"
-                className="h-16 w-auto"
-              />Claudia Nohlgård</a>
+
+          {/* Flex container for logo and menu */}
+          <div className="flex flex-1 items-center sm:items-stretch justify-between">
+            {/* Logo with name */}
+            <div className="flex items-center pr-2 space-x-2 flex-shrink-0">
+              <a
+                href="/"
+                className="flex items-center justify-between text-type-1 gap-1 sm:gap-2 -m-1.5 p-1.5"
+              >
+                <img
+                  alt="Your Company"
+                  src="/Images/logocn.png"
+                  className="h-12 w-auto sm:h-16 flex-shrink-0"
+                />
+                {/* Name next to logo, responsive size */}
+                <span className='' >
+                  <p className="hidden md:flex text-lg w-1/2 lg:w-full lg:text-3xl text-wrap white-space-normal">Claudia Nohlgård</p>
+                </span>
+              </a>
             </div>
-            <div className="hidden  sm:flex absolute left-1/2 transform -translate-x-1/2">
-  <div className="bg-button border border-outline/75 p-3 flex items-center shadow-md space-x-2 rounded-full">
-    {navigation.map((item) => (
-      <a
-        key={item.name}
-        href={item.href}
-        aria-current={item.current ? 'page' : undefined}
-        className={classNames(
-          item.href === url.pathname ? 'bg-accent-1 text-white shadow-lg' : 'text-type-2 hover:bg-accent-1-light hover:shadow-md hover:text-white',
-          'rounded-full px-4 py-2 text-sm font-medium',
-        )}
-      >
-        {item.name}
-      </a>
-    ))}
-  </div>
-</div>
 
-            <div className='sm:flex items-center hidden'><ThemeToggle /></div>
+            {/* Navigation links */}
+            <div className="hidden sm:flex absolute mx-2 left-1/2 transform -translate-x-1/2">
+              <div className="bg-button p-2 flex items-center shadow-sm shadow-button-hue space-x-2 rounded-full">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    aria-current={item.current ? 'page' : undefined}
+                    className={classNames(
+                      item.href === url.pathname
+                        ? 'bg-accent-1 font-medium text-lg text-outline shadow-md shadow-button-hue bg-gradient-to-t from-accent-1-dark via-transparent to-accent-1-light'
+                        : 'text-button-hue text-base font-medium hover:bg-accent-1-light2 hover:bg-accent-1-hover hover:text-type-2 hover:shadow-sm hover:shadow-button-hue hover:bg-gradient-to- from-accent-1 via-transparent to-transparent',
+                      'rounded-full px-4 py-3',
+                    )}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* Theme toggle */}
+            <div className="hidden sm:flex items-center space-x-4">
+              <ThemeToggle />
+            </div>
           </div>
-
         </div>
       </div>
 
+      {/* Mobile Menu */}
       <DisclosurePanel className="sm:hidden bg-bgbase/75">
         <div className="space-y-1 px-2 pb-3 pt-2">
           {navigation.map((item) => (
@@ -73,7 +91,9 @@ export default function Navigation({url}:NavigationProps) {
               href={item.href}
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
-                item.href === url.pathname ? 'bg-accent-1 text-white' : 'text-type-1 hover:bg-accent-1-light hover:text-white',
+                item.href === url.pathname
+                  ? 'bg-accent-1 text-white'
+                  : 'text-type-1 hover:bg-accent-1-light hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium',
               )}
             >
@@ -81,8 +101,10 @@ export default function Navigation({url}:NavigationProps) {
             </DisclosureButton>
           ))}
         </div>
-        <div className='flex flex-end p-4 sm:hidden'><ThemeToggle /></div>
+        <div className="flex justify-end p-4 sm:hidden">
+          <ThemeToggle />
+        </div>
       </DisclosurePanel>
     </Disclosure>
-  )
+  );
 }

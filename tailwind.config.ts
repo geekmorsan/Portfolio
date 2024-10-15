@@ -9,6 +9,32 @@ export default {
 				bgbase: "rgb(var(--color-bgbase))",
 				accent: {
 					1:{
+						hover: "rgb(var(--color-accent1hover))",
+						light: "rgb(var(--color-accent1light))",
+						DEFAULT: "rgb(var(--color-accent1))",
+						dark: "rgb(var(--color-accent1dark))",
+					},
+					2: {
+						hover: "rgb(var(--color-accent2hover))",
+						light: "rgb(var(--color-accent2light))",
+						DEFAULT: "rgb(var(--color-accent2))",
+						dark: "rgb(var(--color-accent2dark))",
+					},
+				},
+				type: {
+					1: "rgb(var(--color-type1))",
+					2: "rgb(var(--color-type2))",
+				},
+				button: {DEFAULT: "rgb(var(--color-button))",
+					hue: "rgb(var(--color-buttonhighlight))",
+
+				},
+				outline: "rgb(var(--color-outline))",
+			},
+			gradientColorStops: theme => ({
+				bgbase: "rgb(var(--color-bgbase))",
+				accent: {
+					1:{
 						light: "rgb(var(--color-accent1light))",
 						DEFAULT: "rgb(var(--color-accent1))",
 						dark: "rgb(var(--color-accent1dark))",
@@ -23,9 +49,12 @@ export default {
 					1: "rgb(var(--color-type1))",
 					2: "rgb(var(--color-type2))",
 				},
-				button: "rgb(var(--color-button))",
+				button: {DEFAULT: "rgb(var(--color-button))",
+					hue: "rgb(var(--color-buttonhighlight))",
+
+				},
 				outline: "rgb(var(--color-outline))",
-			},
+			})
 		},
 	},
 
