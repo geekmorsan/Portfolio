@@ -1,7 +1,11 @@
 ---
 import BaseLayout from "../components/BaseLayout.astro";
+import Card from "../UI/Card"
+
+import "@astrojs/react";
+
 const pageTitle = "Projects";
 ---
 <BaseLayout pageTitle={pageTitle}>
-<div class="flex bg-type-1 w-16 h-16 bg-gradient-to-b from-outline to-transparent"></div>
+<Card client:load />
 </BaseLayout>

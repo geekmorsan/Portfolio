@@ -1,6 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import ThemeToggle from './ThemeToggle'
+import ThemeToggle from '../UI/ThemeToggle'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },

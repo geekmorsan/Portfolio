@@ -1,7 +1,9 @@
 import type { Config } from 'tailwindcss'
 
+
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+		"./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",],
 	darkMode: ['selector', '[data-theme="dark"]'],
 	theme: {
 		extend: {
@@ -54,7 +56,7 @@ export default {
 
 				},
 				outline: "rgb(var(--color-outline))",
-			})
+			}),
 		},
 	},
 
