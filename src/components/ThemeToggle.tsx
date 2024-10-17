@@ -18,7 +18,7 @@ export default function ThemeToggle() {
     <label className="inline-flex relative items-center cursor-pointer">
       <input type="checkbox" id="theme-toggle-checkbox" className="sr-only peer"
         onChange={e => setDarkMode(e.currentTarget.checked)}/>
-      <div aria-hidden="true" className="w-[4.5rem] h-9 bg-accent-1 peer-focus:outline-none ring-1 shadow-inner shadow-gray-900 ring-button peer-hover:ring-button-hue
+      <div aria-hidden="true" className="w-[4.5rem] h-9 bg-accent-1 peer-focus:outline-none ring-2 shadow-inner shadow-gray-900 dark:ring-gray-800 peer-hover:ring-button-hue
              rounded-full " />
       <div id="theme-toggle-ball" className="absolute top-0.5 start-0.5
   peer-checked:translate-x-9 rtl:peer-checked:-translate-x-9

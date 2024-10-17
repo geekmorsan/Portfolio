@@ -7,9 +7,6 @@ h1 {
     font-weight: 600;
     font-style: normal;
     font-size: 4rem;
-    margin-top: 0;
-    color: #333;
-    text-align: center;
   }
   h2 {
     font-size: 2rem;
@@ -19,7 +16,7 @@ h1 {
   }
   h4 {
     font-size: 1.5rem;
-    font-family: yorkten-slab-normal, sans-serif;
+    font-family: proxima-nova, sans-serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -33,8 +30,7 @@ h1 {
     font-size: 1rem;
   }
   p {
-    font-size: 1.5rem;
-      font-family: yorkten-slab-normal, sans-serif;
+    font-family: yorkten-slab-normal, sans-serif;
     font-weight: 400;
     font-style: normal;
   }
@@ -43,14 +39,10 @@ h1 {
   }
 .font-proxima-nova {
   font-family: proxima-nova, sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 .font-yorkten-slab {
   font-family: yorkten-slab-normal, sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 @layer base {
@@ -64,10 +56,12 @@ h1 {
   --color-accent1light: 84, 156, 168;
   --color-accent1hover: 126, 180, 189;
   --color-accent1dark: 2, 60, 71;
+  --color-accent1header:2, 60, 71;
   --color-accent2: 180, 26, 186;
   --color-accent2light: 211, 83, 215;
   --color-accent2hover: 221, 125, 224;
   --color-accent2dark: 106, 0, 110;
+  --color-accent2header:106, 0, 110;
   --color-type1: 4, 9, 10;
   --color-type2: 64, 82, 98;
   --color-button: 231, 232, 234;
@@ -80,14 +74,16 @@ h1 {
   --color-accent2light: 84, 156, 168;
   --color-accent2hover: 52, 98, 105;
   --color-accent2dark: 2, 60, 71;
+  --color-accent2header:22, 111, 126;
   --color-accent1: 180, 26, 186;
   --color-accent1light: 211, 83, 215;
   --color-accent1hover: 129, 54, 133;
   --color-accent1dark: 106, 0, 110;
+  --color-accent1header:180, 26, 186;
   --color-type1: 251, 251, 251;
-  --color-type2: 207, 208, 210;
+  --color-type2: 182, 185, 192;
   --color-button: 11, 24, 27;
-  --color-buttonhighlight: 50, 56, 59;
+  --color-buttonhighlight: 69, 74, 82;
   --color-outline: 207, 208, 210;
 }
 

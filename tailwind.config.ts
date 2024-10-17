@@ -11,12 +11,14 @@ export default {
 				bgbase: "rgb(var(--color-bgbase))",
 				accent: {
 					1:{
+						head: "rgb(var(--color-accent1header))",
 						hover: "rgb(var(--color-accent1hover))",
 						light: "rgb(var(--color-accent1light))",
 						DEFAULT: "rgb(var(--color-accent1))",
 						dark: "rgb(var(--color-accent1dark))",
 					},
 					2: {
+						head: "rgb(var(--color-accent2header))",
 						hover: "rgb(var(--color-accent2hover))",
 						light: "rgb(var(--color-accent2light))",
 						DEFAULT: "rgb(var(--color-accent2))",
@@ -37,11 +39,15 @@ export default {
 				bgbase: "rgb(var(--color-bgbase))",
 				accent: {
 					1:{
+						head: "rgb(var(--color-accent1header))",
+						hover: "rgb(var(--color-accent1hover))",
 						light: "rgb(var(--color-accent1light))",
 						DEFAULT: "rgb(var(--color-accent1))",
 						dark: "rgb(var(--color-accent1dark))",
 					},
 					2: {
+						head: "rgb(var(--color-accent1header))",
+						hover: "rgb(var(--color-accent1hover))",
 						light: "rgb(var(--color-accent2light))",
 						DEFAULT: "rgb(var(--color-accent2))",
 						dark: "rgb(var(--color-accent2dark))",

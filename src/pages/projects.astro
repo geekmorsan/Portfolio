@@ -1,11 +1,15 @@
 ---
 import BaseLayout from "../components/BaseLayout.astro";
-import Card from "../UI/Card"
+import Card from "../components/Card"
 
 import "@astrojs/react";
 
 const pageTitle = "Projects";
+const subText = "Now that I chaught you attentiom, let me show my featured work below. Scroll a little further for more"
 ---
 <BaseLayout pageTitle={pageTitle}>
-<Card client:load />
+  <div class="container mx-auto">
+    <h4 class="md:w-1/2 text-type-2 text-lg pr-4 py-4 sm:py-0 sm:text-2xl">{subText}</h4>
+    <Card client:load />
+  </div>
 </BaseLayout>

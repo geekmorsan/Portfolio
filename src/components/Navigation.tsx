@@ -1,6 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import ThemeToggle from '../UI/ThemeToggle'
+import ThemeToggle from './ThemeToggle'
 
 const navigation = [
   { name: 'Home', href: '/', current: true },
@@ -47,14 +47,14 @@ export default function Navigation({ url }: NavigationProps) {
                 />
                 {/* Name next to logo, responsive size */}
                 <span className='' >
-                  <p className="hidden md:flex text-lg w-1/2 lg:w-full lg:text-3xl text-wrap white-space-normal">Claudia Nohlgård</p>
+                  <p className="hidden md:flex text-lg w-1/2 lg:w-full lg:text-2xl text-wrap white-space-normal">Claudia Nohlgård</p>
                 </span>
               </a>
             </div>
 
             {/* Navigation links */}
             <div className="hidden sm:flex absolute mx-2 left-1/2 transform -translate-x-1/2">
-              <div className="bg-button p-2 flex items-center shadow-sm shadow-button-hue space-x-2 rounded-full">
+              <div className="bg-button p-2 dark:ring-1 ring-gray-800 flex items-center shadow shadow-button-hue dark:shadow-md dark:shadow-bgbase space-x-2 rounded-full">
                 {navigation.map((item) => (
                   <a
                     key={item.name}
@@ -62,8 +62,8 @@ export default function Navigation({ url }: NavigationProps) {
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.href === url.pathname
-                        ? 'bg-accent-1 font-medium text-lg text-outline shadow-md shadow-button-hue bg-gradient-to-t from-accent-1-dark via-transparent to-accent-1-light'
-                        : 'text-button-hue text-base font-medium hover:bg-accent-1-light2 hover:bg-accent-1-hover hover:text-type-2 hover:shadow-sm hover:shadow-button-hue hover:bg-gradient-to- from-accent-1 via-transparent to-transparent',
+                        ? 'bg-accent-1 font-medium text-lg text-outline shadow shadow-button-hue bg-gradient-to-t from-accent-1-dark via-transparent to-accent-1-light'
+                        : 'text-type-2 text-base font-medium hover:bg-accent-1-light2 hover:bg-accent-1-hover hover:text-type-2 hover:shadow-sm hover:shadow-button-hue hover:bg-gradient-to- from-accent-1 via-transparent to-transparent',
                       'rounded-full px-4 py-3',
                     )}
                   >
