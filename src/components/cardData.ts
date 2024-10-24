@@ -14,7 +14,7 @@ export const cardData: CardData[] = [
     image: '/Images/UI1200x700.png',
     title: 'UI & UX Design',
     text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
-    link: '#',
+    link: '/posts/post-1/',
   },
   {
     image: '/Images/graphic_design1200x700.png',

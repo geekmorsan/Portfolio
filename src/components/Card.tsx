@@ -16,11 +16,11 @@ const Card: React.FC<CardData> = ({ image, title, text, link }) => {
     <a href={link} className="block group">
       <div className="relative dark:border border-button shadow-md dark:shadow-gray-900 shadow-button-hue rounded-xl overflow-hidden">
         <img className="w-full h-auto rounded-xl" src={image} alt={title} />
-        <div className="absolute inset-0 opacity-85 group-hover:bg-gradient-to-r from-accent-1 to-accent-2"></div>
+        <div className="absolute bg-slate-900/30 inset-0 opacity-85 group-hover:bg-gradient-to-r from-accent-1 to-accent-2"></div>
         <div className="absolute top-0 left-0 right-0">
           <div className="p-3 space-y-3 sm:p-4">
-            <div className="relative bg-button w-fit rounded-xl"><h3 className="font-semibold px-3 pt-1.5 pb-2 sm:px-4 sm:pt-3.5 sm:pb-4 text-lg sm:text-2xl text-type-1">{title}</h3></div>
-            <p className="mt-1 px-2 text-base text-outline sm:leading-tight sm:text-lg text-gray-800">
+            <div className="relative flex items-center bg-accent-1-dark px-2.5 pt-1 pb-1.5 w-fit rounded-xl"><span className="font-semibold text-lg sm:text-2xl text-outline">{title}</span></div>
+            <p className="mt-1 px-1 lg:px-2 text-base text-gray-100 sm:leading-tight sm:text-lg">
               {text}
             </p>
           </div>
@@ -47,7 +47,7 @@ const CardList: React.FC = () => {
             <Card key={index} {...card} />
           ))}
       </div>
-      <div className="space-y-6 lg:space-y-10 mt-4 md:-translate-y-16 md:mt-0">
+      <div className="space-y-6 lg:space-y-10 mt-6 md:-translate-y-16 md:mt-0">
         {cardData
           .filter((_, index) => index % 2 !== 0)
           .map((card, index) => (

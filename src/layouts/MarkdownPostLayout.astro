@@ -1,0 +1,50 @@
+---
+import BaseLayout from "~components/BaseLayout.astro";
+const { frontmatter } = Astro.props;
+
+---
+<BaseLayout>
+<div class="container mx-auto px-2 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 justify-around lg:gap-16 gap-x-8 gap-y-4 sm:max-md:gap-6">
+        <div class="flex flex-col">
+            <div><h2 class="text-3xl font-bold text-type-1 md:text-4xl">{frontmatter.title}</h2>
+            <p class="mt-4 lg:text-xl md:text-lg sm:text-base text-type-2">{frontmatter.description}</p></div>
+            <div class="pt-2 lg:pt-4">
+                <div class="font-medium text-base md:text-lg text-type-1">Tags</div>
+                <ul class="flex flex-wrap mt-2 sm:max-md:gap-y-1 gap-y-2">{frontmatter.tags.map((tag: string) => (
+                    <li class="bg-accent-1-dark text-outline md:text-lg font-light sm:max-md:mr-1 text-base mr-2 px-2 rounded">{tag.trim()}</li>
+                  ))}</ul>
+              </div>
+       </div>
+       <div class="lg:py-4 self-end lg:pr-4"><img src={frontmatter.image.url} class="h-auto w-full rounded-xl" alt={frontmatter.image.alt}/></div>
+    </div>
+    <dl class="mt-2 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 sm:gap-y-3 lg:gap-x-16">
+        <div class="border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">My Role</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.role}</dd>
+        </div>
+        <div class="max-sm:border-t border-accent-1-hover pt-3">
+            <dt class="font-medium text-base md:text-lg text-type-1">When</dt>
+            <dd class="md:mt-1 text-base text-type-2">{frontmatter.pubDate.toString().slice(0,10)}</dd>
+          </div>
+        <div class="border-t border-accent-1-hover pt-2">
+          <dt class="font-medium text-base md:text-lg text-type-1">Studio</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.company}</dd>
+        </div>
+        <div class="border-t border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">Team size</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.team}</dd>
+        </div>
+        <div class="border-t border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">Game genre</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.genre}</dd>
+        </div>
+        <div class="border-t border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">Platform</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.platform}</dd>
+        </div>
+      </dl>
+
+    </div>
+<slot />
+</BaseLayout>
