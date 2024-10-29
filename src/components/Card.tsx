@@ -26,7 +26,7 @@ const Card: React.FC<CardData> = ({ image, title, text, link }) => {
           </div>
         </div>
         <div className='absolute hidden right-0 px-6 py-4 lg:inset-x-0 bottom-0 lg:p-14 group-hover:block'>
-            <div className='text-xl flex justify-end gap-2 items-center md:text-2xl text-center'>Show project<ChevronRightIcon className='stroke-1 size-6 md:size-10'h-4/>
+            <div className='text-xl flex justify-end gap-2 items-center md:text-2xl text-center'>Show project<ChevronRightIcon area-hidden="true" className='stroke-1 size-6 md:size-10'h-4/>
             </div>
         </div>
       </div>

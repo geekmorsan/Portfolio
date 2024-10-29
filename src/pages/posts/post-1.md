@@ -1,15 +1,17 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Meadow - UI Rework'
-pubDate: '2023-2024'
 description: 'Complete rework of the game’s UI to improve user experience and incorporate new features'
-company: 'Might and Delight AB'
-role: "UX designer, UI software engineer"
-platform: "Steam"
-team: "Meadow team, 6-7 people"
-genre: "MMO, Online co-op"
+info: [
+  { "heading": "My Role", "content": "UX & UI designer engineer" },
+  { "heading": "When", "content": "2023-2024" },
+  { "heading": "Studio", "content": "Might & Delight AB" },
+  { "heading": "Team size", "content": "6-7 people" },
+  { "heading": "Game genre", "content": "MMO, Online co-op" },
+  { "heading": "Platform", "content": "Steam" }
+]
 image:
     url: '/Images/meadowUI.png'
     alt: 'Mlandingimg'
-tags: ["UI design ", "UX design ", "Unity ", "Figma ","Photoshop"]
+tags: ["UI design ", "UX design ", "Game Development" ]
 ---

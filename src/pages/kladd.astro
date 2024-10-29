@@ -71,3 +71,142 @@ const CardList: React.FC = () => {
 };
 
 export default CardList;
+
+
+---
+import BaseLayout from "~components/BaseLayout.astro";
+const { frontmatter } = Astro.props;
+
+type InfoItem = {
+  heading: string;
+  content: string;
+};
+
+interface Info {
+  info: InfoItem[];
+}
+
+---
+Markdownpostlayout:
+<BaseLayout>
+  <!-- <div class="container mx-auto px-2 lg:px-12">
+      <div class="grid grid-cols-1 sm:flex justify-between  gap-y-6 gap-x-8 sm:max-md:gap-6">
+        <div class="grid grid-col sm:basis-5/12  content-between">
+            <div class="">
+                <h2 class="text-3xl sm:max-md:text-2xl font-bold text-type-1 lg:text-4xl">{frontmatter.title}</h2>
+                <p class=" lg:mt-4 lg:text-2xl md:text-[1.125rem] sm:text-base text-type-2">{frontmatter.description}</p>
+            </div>
+            <div class="">
+                <div class="font-medium text-base md:text-lg text-type-1">Tags</div>
+                <ul class="flex flex-wrap mt-2 sm:max-lg:gap-y-1 gap-y-2">{frontmatter.tags.map((tag: string) => (
+                    <li class="bg-accent-1-dark text-outline lg:text-lg font-light sm:max-lg: sm:max-lg:mr-1 text-base mr-2 px-2 rounded">{tag.trim()}</li>
+                  ))}</ul>
+            </div>
+       </div>
+       <div class="relative sm:basis-7/12 content-end "><img src={frontmatter.image.url} class="h-auto w-full rounded-xl" alt={frontmatter.image.alt}/></div>
+    </div>
+
+    <div class="mt-2 grid grid-cols-1 gap-x-8 gap-y-2 sm:grid-cols-2 sm:gap-y-3 lg:gap-x-16">
+        <div class="border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">My Role</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.role}</dd>
+        </div>
+        <div class="max-sm:border-t border-accent-1-hover pt-3">
+            <dt class="font-medium text-base md:text-lg text-type-1">When</dt>
+            <dd class="md:mt-1 text-base text-type-2">{frontmatter.pubDate}</dd>
+          </div>
+        <div class="border-t border-accent-1-hover pt-2">
+          <dt class="font-medium text-base md:text-lg text-type-1">Studio</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.company}</dd>
+        </div>
+        <div class="border-t border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">Team size</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.team}</dd>
+        </div>
+        <div class="border-t border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">Game genre</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.genre}</dd>
+        </div>
+        <div class="border-t border-accent-1-hover pt-3">
+          <dt class="font-medium text-base md:text-lg text-type-1">Platform</dt>
+          <dd class="md:mt-1 text-base text-type-2">{frontmatter.platform}</dd>
+        </div>
+      </div>
+
+    </div>
+<slot /> -->
+  <div class="container mx-auto px-2 ">
+      <h2 class="text-3xl font-bold md:text-center text-type-1 md:text-5xl">
+        {frontmatter.title}
+      </h2>
+     <!--  <section class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8 border-t border-gray-700 pt-6">
+        {frontmatter.info.map((item: InfoItem) => (
+          <div class="flex flex-col border-b border-gray-700 pb-4 md:pb-6">
+            <h3 class="text-lg font-semibold text-gray-400">{item.heading}</h3>
+            <p class="mt-1 text-base text-gray-100">{item.content}</p>
+          </div>
+        ))}
+      </section> -->
+
+      <div class="py-4 place-content-center">
+        <ul
+          class="flex flex-wrap justify-center mt-2 sm:max-lg:gap-y-1 gap-y-2">
+          {
+            frontmatter.tags.map((tag: string) => (
+              <li class="bg-accent-1-dark text-outline lg:text-lg font-light sm:max-lg: sm:max-lg:mr-1 text-base mr-2 px-2 rounded">
+                {tag.trim()}
+              </li>
+            ))
+          }
+        </ul>
+        <p class="text-center lg:text-2xl md:text-xl sm:text-base text-type-2">
+          {frontmatter.description}
+        </p>
+      </div>
+      <div class="md:flex justify-between content-center lg:gap-8 borde-t border-accent-1-hover">
+        <section class="md:basis-1/2 lg:bais-2/5 grid grid-cols-1 md:grid-cols-2 md:max-lg:pr-8 gap-y-6 gap-x-8">
+          {frontmatter.info.map((item: InfoItem) => (
+            <div class="flex flex-col border-b border-accent-1-hover pb-2 md:pb-4">
+              <h3 class="font-medium text-base md:text-lg text-type-1">{item.heading}</h3>
+              <p class="lg:mt-1 text-base text-type-2">{item.content}</p>
+            </div>
+          ))}
+        </section>
+        <!-- <div class="md:basis-1/2 lg:bais-2/5 md:max-lg:pr-8 grid grid-cols-1 gap-x-4 sm:grid-cols-2 xl:gap-x-8">
+          <div class="border-accent-1-hover pt-3">
+            <dt class="font-medium text-base md:text-lg text-type-1">My Role</dt>
+            <dd class="lg:mt-1 text-base text-type-2">{frontmatter.role}</dd>
+          </div>
+          <div class="max-sm:border-t border-accent-1-hover pt-3">
+              <dt class="font-medium text-base md:text-lg text-type-1">When</dt>
+              <dd class="lg:mt-1 text-base text-type-2">{frontmatter.pubDate}</dd>
+            </div>
+          <div class="border-t border-accent-1-hover pt-3">
+            <dt class="font-medium text-base md:text-lg text-type-1">Studio</dt>
+            <dd class="lg:mt-1 text-base text-type-2">{frontmatter.company}</dd>
+          </div>
+          <div class="border-t border-accent-1-hover pt-3">
+            <dt class="font-medium text-base md:text-lg text-type-1">Team size</dt>
+            <dd class="lg:mt-1 text-base text-type-2">{frontmatter.team}</dd>
+          </div>
+          <div class="border-t border-accent-1-hover pt-3">
+            <dt class="font-medium text-base md:text-lg text-type-1">Game genre</dt>
+            <dd class="lg:mt-1 text-base text-type-2">{frontmatter.genre}</dd>
+          </div>
+          <div class="border-t border-accent-1-hover pt-3">
+            <dt class="font-medium text-base md:text-lg text-type-1">Platform</dt>
+            <dd class="lg:mt-1 text-base text-type-2">{frontmatter.platform}</dd>
+          </div>
+        </div> -->
+        <div class="md:basis-1/2 lg:basis-3/5 content-center">
+          <img
+            src={frontmatter.image.url}
+            class="h-auto w-full rounded-xl"
+            alt={frontmatter.image.alt}
+          />
+        </div>
+      </div>
+  </div>
+
+  <slot />
+</BaseLayout>
