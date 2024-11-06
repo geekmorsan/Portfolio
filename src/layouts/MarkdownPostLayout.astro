@@ -14,7 +14,7 @@ interface Info {
 ---
 
 <BaseLayout>
-  <div class="container md:mb-16 sm:mb-8 space-y-4 mx-auto px-2 ">
+  <div class="container mx-auto px-4">
 
       <div class="place-content-center space-y-4">
         <h2 class="text-3xl font-bold text-center text-type-1 md:text-5xl">
@@ -30,20 +30,20 @@ interface Info {
             ))
           }
         </ul>
-        <p class="text-center pt-4 lg:text-2xl md:text-xl sm:text-base text-type-2">
+        <p class="text-center sm:pt-3 lg:text-2xl md:text-xl sm:text-base text-type-2">
           {frontmatter.description}
         </p>
       </div>
-      <div class="md:flex items-center md:pt-4 sm:max-md:px-4 gap-x-8">
-        <section class="md:basis-5/2 lg:bais-2/5 grid py-2 lg:mt-2 self-stretch max-sm:divide-y divide-accent-1-hover lg:gap-y-5 grid-cols-1 md:grid-cols-2 lg:gap-x-8 gap-x-5">
+      <div class="md:flex items-center md:pt-4 gap-x-6 lg:gap-x-8">
+        <section class="md:basis-1/2 grid py-2 lg:mt-2 self-stretch max-md:divide-y divide-accent-1-hover lg:gap-y-5 grid-cols-1 md:grid-cols-[3fr_2fr] lg:gap-x-7 gap-x-5">
           {frontmatter.info.map((item: InfoItem) => (
             <div class="flex flex-col md:border-b border-accent-1-hover">
-              <h3 class="font-medium mt-2 lg:text-xl text-base md:text-lg text-type-1">{item.heading}</h3>
+              <h3 class="font-medium mt-1 lg:mt-3 lg:text-xl text-base md:text-lg text-type-1">{item.heading}</h3>
               <p class="lg:mt-1 text-base lg:text-lg mb-2 text-type-2">{item.content}</p>
             </div>
           ))}
         </section>
-        <div class="md:basis-7/12 lg:basis-3/5 self-center">
+        <div class="md:basis-1/2 md:pt-4 self-center">
           <img
             src={frontmatter.image.url}
             class="h-auto w-full rounded-xl"
@@ -51,8 +51,8 @@ interface Info {
           />
         </div>
       </div>
-      <slot />
+      <div class="pt-8 text-type-1 md:pt-12">
+        <slot />
+      </div>
   </div>
-
-
 </BaseLayout>

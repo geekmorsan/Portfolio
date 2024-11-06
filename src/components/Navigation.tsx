@@ -63,7 +63,7 @@ export default function Navigation({ url }: NavigationProps) {
                     className={classNames(
                       item.href === url.pathname
                         ? 'bg-accent-1 font-medium text-lg text-outline shadow shadow-button-hue bg-gradient-to-t from-accent-1-dark via-transparent to-accent-1-light'
-                        : 'text-type-2 text-base font-medium hover:bg-accent-1-light2 hover:bg-accent-1-hover hover:text-type-2 hover:shadow-sm hover:shadow-button-hue hover:bg-gradient-to- from-accent-1 via-transparent to-transparent',
+                        : 'text-type-2 text-base font-medium hover:bg-accent-1-hover hover:text-type-2 hover:shadow-sm hover:shadow-button-hue hover:bg-gradient-to- from-accent-1 via-transparent to-transparent',
                       'rounded-full px-4 py-3',
                     )}
                   >
@@ -93,7 +93,7 @@ export default function Navigation({ url }: NavigationProps) {
               className={classNames(
                 item.href === url.pathname
                   ? 'bg-accent-1 font-medium text-lg text-outline shadow shadow-button-hue bg-gradient-to-t from-accent-1-dark via-transparent to-accent-1-light'
-                  : 'text-type-2 text-base font-medium hover:bg-accent-1-light2 hover:bg-accent-1-hover hover:text-type-2 hover:shadow-sm hover:shadow-button-hue hover:bg-gradient-to- from-accent-1 via-transparent to-transparent',
+                  : 'text-type-2 text-base font-medium hover:bg-accent-1-hover hover:text-type-2 hover:shadow-sm hover:shadow-button-hue hover:bg-gradient-to- from-accent-1 via-transparent to-transparent',
                 'block rounded-3xl px-3 py-2 text-center text-base font-medium',
               )}
             >
