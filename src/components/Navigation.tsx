@@ -38,12 +38,12 @@ export default function Navigation({ url }: NavigationProps) {
             <div className="flex items-center pr-2 mr-2 space-x-2 flex-shrink-0">
               <a
                 href="/"
-                className="flex items-center justify-between text-type-1 gap-1 sm:gap-2 -m-1.5 p-1.5"
+                className="flex items-center justify-between text-type-1 dark:text-outline gap-1 sm:gap-2 -m-1.5 p-1.5"
               >
                 <img
                   alt="Your Company"
                   src="/Images/logocn.png"
-                  className="h-12 w-auto sm:h-16 flex-shrink-0"
+                  className="h-12 w-auto shadow-button-hue sm:h-16 flex-shrink-0"
                 />
                 {/* Name next to logo, responsive size */}
                 <span className='' >
@@ -82,7 +82,7 @@ export default function Navigation({ url }: NavigationProps) {
       </div>
 
       {/* Mobile Menu */}
-      <DisclosurePanel className="absolute w-72 -translate-y-4 right-4 sm:hidden rounded-[1.75rem] bg-button dark:ring-1 ring-gray-800 shadow shadow-button-hue dark:shadow-md dark:shadow-bgbase">
+      <DisclosurePanel className="absolute w-72 -translate-y-4 right-4 md:hidden rounded-[1.75rem] bg-button dark:ring-1 ring-gray-800 shadow shadow-button-hue dark:shadow-md dark:shadow-bgbase">
         <div className="space-y-2 p-3">
           {navigation.map((item) => (
             <DisclosureButton
